@@ -9,8 +9,7 @@ let m1 pat = p "m1" $ mask (cB True "m") $ pat |+ pan (1/8)
     jux = juxBy 0.25
     rv r s o = room r #size s # orbit o
 	del w t f o = delay w #delaytime t #delayfeedback f # orbit o
-    
-switcher switchpat = do setB "m" $ (== "m") <$> switchpat
-                        setB "c" $ (== "c") <$> switchpat
-                        setB "y" $ (== "y") <$> switchpat
-                        setB "i" $ (== "i") <$> switchpat
+    switcher switchpat = do setB "m" $ (== "m") <$> switchpat
+                            setB "c" $ (== "c") <$> switchpat
+                            setB "y" $ (== "y") <$> switchpat
+                            setB "i" $ (== "i") <$> switchpat
