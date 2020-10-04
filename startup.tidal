@@ -1,0 +1,15 @@
+let m1 pat = p "m1" $ mask (cB True "m") $ pat |+ pan (1/8)
+    m2 pat = p "m2" $ mask (cB True "m") $ pat |+ pan (1/8)
+    c1 pat = p "c1" $ mask (cB True "c") $ pat |+ pan (3/8)
+    c2 pat = p "c2" $ mask (cB True "c") $ pat |+ pan (3/8)
+    y1 pat = p "y1" $ mask (cB True "y") $ pat |+ pan (5/8)
+    y2 pat = p "y2" $ mask (cB True "y") $ pat |+ pan (5/8)
+    i1 pat = p "i1" $ mask (cB True "i") $ pat |+ pan (7/8)
+    i2 pat = p "i2" $ mask (cB True "i") $ pat |+ pan (7/8)
+    jux = juxBy 0.25
+    rv r s o = room r #size s # orbit o
+	del w t f o = delay w #delaytime t #delayfeedback f # orbit o
+    switcher switchpat = do setB "m" $ (== "m") <$> switchpat
+                            setB "c" $ (== "c") <$> switchpat
+                            setB "y" $ (== "y") <$> switchpat
+                            setB "i" $ (== "i") <$> switchpat
