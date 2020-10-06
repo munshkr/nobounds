@@ -95,5 +95,7 @@ switcher switchpat = do setB "m" $ (== "m") <$> switchpat
                         setB "i" $ (== "i") <$> switchpat
 :}
 
+putStrLn "** No Bounds setup **"
+
 :set prompt "tidal> "
 :set prompt-cont ""
